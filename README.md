@@ -1,16 +1,69 @@
-## Hi there 👋
+👋 Hi, I'm Rohit Jana
 
-<!--
-**Rohitjana14/Rohitjana14** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+💻 Full Stack Web Developer (PHP & Laravel)
+🚀 Passionate about building scalable web applications and clean UI/UX
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+🔥 About Me
+
+- 🌱 Currently learning Advanced Laravel & API Development
+- 💼 Looking for Remote Internship / Junior Developer Role
+- 🛠️ Skilled in PHP, Laravel, MySQL, JavaScript, HTML, CSS
+- 📌 Focused on building real-world projects
+
+---
+
+🧰 Tech Stack
+
+Frontend:
+HTML | CSS | JavaScript | Bootstrap
+
+Backend:
+PHP | Laravel
+
+Database:
+MySQL
+
+Tools:
+Git | GitHub | Dreamwaver Flash 8  | Xampp
+
+---
+
+📂 Projects
+
+🛒 E-commerce Website
+
+- User authentication system
+- Product management
+- Cart & checkout system
+
+🎓 Online Book Store
+
+- Admin registration
+- Admin dashboard
+- Book management
+
+👤 User Management System
+
+- Login & role-based access
+- CRUD operations
+
+---
+
+📈 GitHub Stats
+
+"Stats" (https://github/Rohitjana14)
+
+---
+
+📫 Contact Me
+
+- 📧 Email: rohitjaanna33@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/rohit-jana-95292a26b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+
+---
+
+⚡ Fun Fact
+
+I love turning ideas into real-world web applications 🚀
