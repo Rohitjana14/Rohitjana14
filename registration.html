@@ -1,0 +1,181 @@
+<?php
+// START SESSION
+session_start();
+
+// DATABASE CONNECTION
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "online_book_store";
+$port = 3308;
+
+$conn = mysqli_connect($host, $username, $password, $database, $port);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$message = "";
+
+// FORM SUBMIT
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST["name"];
+    $email = $_POST["email_address"];
+    $phone = $_POST["ph_no"];
+    $username = $_POST["user_name"];
+    $password = $_POST["password"];
+    $confirm = $_POST["confirm_password"];
+
+    // PASSWORD CHECK
+    if ($password != $confirm) {
+        $message = " Passwords do not match";
+    } else {
+
+        // HASH PASSWORD
+        $hashed = password_hash($password, PASSWORD_DEFAULT);
+
+        // INSERT QUERY
+        $sql = "INSERT INTO customer (full_name, email, phone, username, password)
+                VALUES ('$name', '$email', '$phone', '$username', '$hashed')";
+
+        if (mysqli_query($conn, $sql)) {
+            $message = " Account Created Successfully";
+        } else {
+            $message = " Error: " . mysqli_error($conn);
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register | Ink & Thoughts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* BACKGROUND */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('backgroundpic2.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CARD */
+.container {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    color: white;
+}
+
+/* TITLE */
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* MESSAGE */
+.msg {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ff6b6b;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff9800;
+}
+
+/* LINK */
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Create Account</h2>
+
+    <div class="msg">
+        <?php echo $message; ?>
+    </div>
+
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="email" name="email_address" placeholder="Email Address" required>
+
+        <input type="text" name="ph_no" placeholder="Phone Number" required>
+
+        <input type="text" name="user_name" placeholder="Username" required>
+
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <button type="submit">Create Account</button>
+
+    </form>
+
+    <p>Already have an account? <a href="login.php">Login</a></p>
+
+</div>
+
+</body>
+</html>
+
+<?php mysqli_close($conn); ?>
