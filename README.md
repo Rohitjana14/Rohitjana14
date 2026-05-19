@@ -39,6 +39,7 @@ live demo:https://rohit-portfolio-s80s.onrender.com
 - User authentication system
 - Product management
 - Cart & checkout system
+  live demo:https://outfitly-012n.onrender.com
 
 🎓 Online Book Store
 
@@ -46,7 +47,7 @@ live demo:https://rohit-portfolio-s80s.onrender.com
 - Admin dashboard
 - Book management
 
-👤 User Management System
+👤 quickserve-web(urban city service booking website)
 
 - Login & role-based access
 - CRUD operations
